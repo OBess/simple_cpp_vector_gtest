@@ -26,8 +26,8 @@ TEST(CustomVector, AllocationConstructor)
 
 TEST(CustomVector, CopyConstructorAndFrontBack)
 {
-   c_vector<int> c{25, 4, 6, 21, 65, -34, 65};
-   c_vector<int> c1(c);
+   c_vector c{25, 4, 6, 21, 65, -34, 65};
+   c_vector c1(c);
 
    ASSERT_EQ(25, c.front());
    ASSERT_EQ(65, c.back());
@@ -38,7 +38,7 @@ TEST(CustomVector, CopyConstructorAndFrontBack)
 
 TEST(CustomVector, MoveSemantic)
 {
-   c_vector<int> c({25, 4, 6, 21, 65, -34, 65});
+   c_vector c({25, 4, 6, 21, 65, -34, 65});
 
    ASSERT_EQ(25, c.front());
    ASSERT_EQ(65, c.back());
@@ -55,7 +55,7 @@ TEST(CustomVector, IndexOperator)
 
 TEST(CustomVector, PushPopBack)
 {
-   c_vector<int> c = {25, 4, 6, 21, 65, -34, 65};
+   c_vector c = {25, 4, 6, 21, 65, -34, 65};
    c.pop_back();
    c.push_back(45);
    c.pop_back();
@@ -66,7 +66,7 @@ TEST(CustomVector, PushPopBack)
 
 TEST(CustomVector, Resize)
 {
-   c_vector<int> c{25, 4, 6, 21, 65, -34, 65};
+   c_vector c{25, 4, 6, 21, 65, -34, 65};
    
    c.resize(4);
    ASSERT_EQ(21, c.back());
@@ -75,7 +75,7 @@ TEST(CustomVector, Resize)
    ASSERT_EQ(100, c.back());
 
    c.resize(12);
-   ASSERT_EQ(12, c.back());
+   ASSERT_EQ(0, c.back());
 }
 
 //----------------------------~Tests
